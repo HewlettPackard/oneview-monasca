@@ -1,0 +1,11 @@
+servers:
+   - mac-addr: D8:9D:67:73:54:04 
+     dimensions: 
+         service: "compute" 
+         hostname: "host_1"
+   - mac-addr: 08:00:27:8b:9e:d0
+     dimensions: 
+         service: "storage" 
+         hostname: "host_2"
+         cluster: "3"
+         backend: "ceph"
