@@ -21,7 +21,7 @@ from ovm_serverlist.manager.manager_server_list import ManagerServerList
 from ovm_serverlist.manager.manager_oneview import ManagerOneView
 from ovm_serverlist.driver.base import DiscoveryNodeProvider
 from ovm_serverlist.shared import utils as utils
-from ovm_ironic.shared import log as logging
+from ovm_serverlist.shared import log as logging
 
 from threading import Thread
 from threading import Lock
