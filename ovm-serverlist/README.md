@@ -39,12 +39,12 @@ servers:
 ```
 
 When installed, the location of the yaml file should be written in the
-configuration file of the oneview-monasca in the section `server_list`, according
+configuration file of the oneview-monasca in the section `serverlist`, according
 the next example.
 
 ```
 # Section server_l
-[server_list]
+[serverlist]
 mac_file_path = <yaml_file>
 ```
 
