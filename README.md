@@ -112,7 +112,7 @@ admin_tenant_name = admin
 insecure = false
 ironic_api_version = 1.11
 
-[server_list]
+[serverlist]
 mac_file_path = ~/mac-file.yaml
 ```
 
