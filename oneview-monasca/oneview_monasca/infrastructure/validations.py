@@ -24,7 +24,7 @@ from ironicclient import client as ironic
 from monascaclient import client as monclient, ksclient
 from oneview_monasca.shared.section_read import SectionRead
 from oneview_monasca.shared import log as logging
-from oneview_monasca.shared import utils
+from oneview_monasca.shared import utils, constants
 
 import os
 import re
@@ -143,7 +143,7 @@ def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure,
         kwargs['insecure'] = True
 
     try:
-        ironic.get_client(1, **kwargs)
+        ironic.get_client(constants.API_VERSION, **kwargs)
     except:
         raise
 
