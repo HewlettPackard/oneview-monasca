@@ -145,8 +145,7 @@ def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure,
     try:
         ironic.get_client(1, **kwargs)
     except:
-        raise InvalidConfigFileException(
-            "Impossible created a connection with ironic services, check the CONFIG FILE")
+        raise
 
 
 def _chk_openstack_credentials(auth_url, username, password, project_name, api_version):
