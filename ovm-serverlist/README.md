@@ -11,10 +11,10 @@ Document Version: v1.0
 
 ## About
 
-The ovm_serverlist is a Node Discoverers Plugin identify which are the nodes in
-OpenStack's Compute that are associated with OneView and inform this to oneview-monasca.
+The ovm_serverlist is a node discoverer plugin that identifies what are the nodes in
+OpenStack's Compute that are associated with OneView and inform them to oneview-monasca.
 
-It process a file looking for interested nodes. To work
+It process a file looking for nodes of interest. To work
 properly this driver requires a yaml file with the mac address of each node to be
 monitored. That yaml has a set of mac addresses to be processed by the
 ovm-serverlist. If the mac address belongs to a machine that is associated with
