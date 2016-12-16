@@ -111,7 +111,11 @@ admin_password = password
 admin_tenant_name = admin
 insecure = false
 ironic_api_version = 1.11
-
+project_name = example-project
+region_name = regionExample
+user_domain_id = default
+project_domain_id = default
+ironic_url = http://17.7.7.107:6385/v1
 [serverlist]
 mac_file_path = ~/mac-file.yaml
 ```

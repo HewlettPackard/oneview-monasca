@@ -35,7 +35,6 @@ import traceback
 LOG = logging.get_logger(__name__)
 
 
-# TODO (diegoadolfo): Try move this class to exceptions module
 class InvalidConfigFileException(Exception):
     """ The exception class that is raised when input config file is not valid.
     """
@@ -78,7 +77,10 @@ def validate_config(config_file, shell=False):
         _chk_ironic_credentials(
             config_file.ironic.auth_url, config_file.ironic.admin_user,
             config_file.ironic.admin_password, config_file.ironic.admin_tenant_name,
-            config_file.ironic.insecure, config_file.ironic.ironic_api_version
+            config_file.ironic.insecure, config_file.ironic.ironic_api_version,
+            config_file.ironic.project_name, config_file.ironic.region_name,
+            config_file.ironic.user_domain_id, config_file.ironic.project_domain_id,
+            config_file.ironic.ironic_url
         )
     except InvalidConfigFileException:
         raise
@@ -122,7 +124,8 @@ def _is_url(value):
     return re.match(regex, value)
 
 
-def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure, api_version):
+def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure, api_version,
+                           project_name, region_name, user_domain_id, project_domain_id, ironic_url):
     """Check if ironic credentials is valid
 
     :param auth_url: The ironic auth url
@@ -131,13 +134,23 @@ def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure,
     :param tenant_name: The cloud-admin project name
     :param insecure: Flag to allow insecure requests
     :param api_version: The ironic api version
+    :param project_name: The cloud project name
+    :param region_name: The cloud region name
+    :param user_domain_id: The cloud user domain id
+    :param project_domain_id: The cloud project domain id
+    :param ironic_url: The ironic url 
     """
     kwargs = {
         'os_username': username,
         'os_password': password,
         'os_auth_url': auth_url,
         'os_tenant_name': tenant_name,
-        'os_ironic_api_version': api_version
+        'os_ironic_api_version': api_version,
+        'os_project_name': project_name,
+        'os_region_name': region_name,
+        'os_user_domain_id': user_domain_id,
+        'os_project_domain_id': project_domain_id,
+        'ironic_url': ironic_url
     }
     if insecure.lower() == 'true':
         kwargs['insecure'] = True
