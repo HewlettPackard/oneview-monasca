@@ -72,6 +72,9 @@ class DiscoveryNodeIronicProvider(DiscoveryNodeProvider, Thread):
                 user_domain_id=self._conf.ironic.user_domain_id,
                 project_domain_id=self._conf.ironic.project_domain_id,
                 ironic_url=self._conf.ironic.ironic_url,
+                project_id=self._conf.ironic.project_id,
+                user_domain_name=self._conf.ironic.user_domain_name,
+                project_domain_name=self._conf.ironic.project_domain_name,
                 max_attempt=self._conf.DEFAULT.auth_retry_limit,
                 debug=self.debug
             )

@@ -80,7 +80,8 @@ def validate_config(config_file, shell=False):
             config_file.ironic.insecure, config_file.ironic.ironic_api_version,
             config_file.ironic.project_name, config_file.ironic.region_name,
             config_file.ironic.user_domain_id, config_file.ironic.project_domain_id,
-            config_file.ironic.ironic_url
+            config_file.ironic.ironic_url, config_file.ironic.project_id,
+            config_file.ironic.user_domain_name, config_file.project_domain_name
         )
     except InvalidConfigFileException:
         raise
@@ -125,7 +126,8 @@ def _is_url(value):
 
 
 def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure, api_version,
-                           project_name, region_name, user_domain_id, project_domain_id, ironic_url):
+                           project_name, region_name, user_domain_id, project_domain_id,
+                           ironic_url, project_id, user_domain_name,project_domain_name):
     """Check if ironic credentials is valid
 
     :param auth_url: The ironic auth url
@@ -138,7 +140,10 @@ def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure,
     :param region_name: The cloud region name
     :param user_domain_id: The cloud user domain id
     :param project_domain_id: The cloud project domain id
-    :param ironic_url: The ironic url 
+    :param ironic_url: The ironic url
+    :param project_id: The cloud project id
+    :param user_domain_name: The cloud user domain name
+    :param project_domain_name: The project domain name
     """
     kwargs = {
         'os_username': username,
@@ -150,7 +155,10 @@ def _chk_ironic_credentials(auth_url, username, password, tenant_name, insecure,
         'os_region_name': region_name,
         'os_user_domain_id': user_domain_id,
         'os_project_domain_id': project_domain_id,
-        'ironic_url': ironic_url
+        'ironic_url': ironic_url,
+        'os_project_id': project_id,
+        'os_user_domain_name': user_domain_name,
+        'os_project_domain_name': project_domain_name 
     }
     if insecure.lower() == 'true':
         kwargs['insecure'] = True

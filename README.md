@@ -115,6 +115,9 @@ project_name = example-project
 region_name = regionExample
 user_domain_id = default
 project_domain_id = default
+project_id = default
+user_domain_name = exampleDomain
+project_domain_name = exampleDomain
 ironic_url = http://17.7.7.107:6385/v1
 [serverlist]
 mac_file_path = ~/mac-file.yaml
