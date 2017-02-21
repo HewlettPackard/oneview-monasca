@@ -30,17 +30,9 @@ NAMESPACE_DISCOVERY_NODES = 'node_discovery.driver'
 ''' METRICS '''
 METRIC_NAME = "oneview.node_status"
 
-'''' MANAGER ONEVIEW '''
-# Map with possibles status form the server hardware
-METRIC_VALUE_PARSER = {
-    "OK": 0,
-    "Disabled": 1,
-    "Critical": 2,
-    "Warning": 3,
-    "Unknown": 4
-}
-MAX_VALUE_META_LEN = 13
-ONEVIEW_URI_PREFIX = '/rest/server-hardware/'
+'''' MANAGER IRONIC '''
+# API version of Ironic Client
+API_VERSION = 1
 
 ''' LOG '''
 # The format to output log
@@ -71,3 +63,13 @@ CERTIFICATE_VALID = 'The existing certificate is still valid'
 HTTP_ERROR_400 = 'response: 400'
 # Resource not found in oneview
 RESOURCE_NOT_FOUND = 'Resource not found'
+# Map with possibles status form the server hardware
+METRIC_VALUE_PARSER = {
+    "OK": 0,
+    "Disabled": 1,
+    "Critical": 2,
+    "Warning": 3,
+    "Unknown": 4
+}
+MAX_VALUE_META_LEN = 13
+ONEVIEW_URI_PREFIX = '/rest/server-hardware/'

@@ -11,8 +11,8 @@ Document Version: v1.0
 
 ## About
 
-The ovm-ironic is a node discoverer plugin identify which are the nodes in
-OpenStack's Ironic that're associated with OneView and inform this to
+The ovm-ironic is a node discoverer plugin that identifies what are the nodes in
+OpenStack's Ironic that're associated with OneView and inform them to
 oneview-monasca.  
 You can read more about Ironic [here](https://wiki.openstack.org/wiki/Ironic).
 

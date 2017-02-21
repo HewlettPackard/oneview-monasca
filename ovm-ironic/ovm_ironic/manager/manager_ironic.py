@@ -37,7 +37,8 @@ class ManagerIronic(AbstractManagerIronic):
     The Ironic Manager.
     """
     def __init__(self, username, password, auth_url, tenant_name, api_version, insecure,
-                 max_attempt=0, debug=False):
+                 project_name, region_name, user_domain_id, project_domain_id, ironic_url,
+                 project_id, user_domain_name, project_domain_name, max_attempt=0, debug=False):
         super(ManagerIronic, self).__init__()
         utils.print_log_message('Info', 'Initializing Ironic Manager...', LOG)
 
@@ -47,6 +48,14 @@ class ManagerIronic(AbstractManagerIronic):
         self.__auth_url = auth_url
         self.__tenant_name = tenant_name
         self.__insecure = insecure
+        self.__project_name = project_name
+        self.__region_name = region_name
+        self.__user_domain_id = user_domain_id
+        self.__project_domain_id = project_domain_id
+        self.__ironic_url = ironic_url
+        self.__project_id = project_id
+        self.__user_domain_name = user_domain_name
+        self.__project_domain_name = project_domain_name
         self.__api_version = api_version
         self.__max_attempt = int(max_attempt)
 
@@ -60,7 +69,15 @@ class ManagerIronic(AbstractManagerIronic):
             'os_password': self.__password,
             'os_auth_url': self.__auth_url,
             'os_tenant_name': self.__tenant_name,
-            'os_ironic_api_version': self.__api_version
+            'os_ironic_api_version': self.__api_version,
+            'os_project_name': self.__project_name,
+            'os_region_name': self.__region_name,
+            'os_user_domain_id': self.__user_domain_id,
+            'os_project_domain_id': self.__project_domain_id,
+            'ironic_url': self.__ironic_url,
+            'os_project_id': self.__project_id,
+            'os_user_domain_name': self.__user_domain_name,
+            'os_project_domain_name': self.__project_domain_name
         }
 
         if self.__insecure.lower() == 'true':
